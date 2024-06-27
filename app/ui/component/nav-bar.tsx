@@ -1,38 +1,36 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import clsx from "clsx";
-import { motion } from "framer-motion";
-import navBarStyle from "./nav-bar.module.css";
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import clsx from 'clsx';
+import navBarStyle from './nav-bar.module.css';
 
 const menuList: {
   name: string;
   href: string;
 }[] = [
-  { name: "Home", href: "/" },
-  { name: "Experience", href: "/experience" },
-  { name: "About", href: "/about" },
+  { name: 'Home', href: '/' },
+  { name: 'Experience', href: '/experience' },
 ];
-const MotionLink = motion(Link);
+
 export default function NavBar() {
   const pathname = usePathname();
 
   return (
     <div className="flex justify-center">
       <div
-        className={`flex gap-4 px-2 rounded-lg bg-purple-900 bg-opacity-25 mt-2 border-white border-[1px]`}
+        className={`mt-2 flex gap-4 rounded-lg border-[1px] border-white bg-purple-900 bg-opacity-25 px-2 flex-wrap justify-center`}
       >
         {menuList.map((menu) => (
           <Link
             key={menu.name}
             href={menu.href}
             className={clsx(
-              "p-2",
-              "hover:bg-purple-700 rounded-lg flex items-center",
-              navBarStyle["motion-underline"],
+              'p-2',
+              'flex items-center rounded-lg hover:bg-purple-700',
+              navBarStyle['motion-underline'],
               {
-                [navBarStyle["motion-underline-active"]]:
+                [navBarStyle['motion-underline-active']]:
                   pathname === menu.href,
               }
             )}

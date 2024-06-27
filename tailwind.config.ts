@@ -1,5 +1,5 @@
 import type { Config } from "tailwindcss";
-import { righteous } from "./app/ui/fonts";
+import { kodchasan } from "./app/ui/fonts";
 
 const config: Config = {
   content: [
@@ -17,6 +17,8 @@ const config: Config = {
       fontFamily: {
         righteous: ["var(--font-righteous)"],
         "space-grotesk": ["var(--font-space-grotesk)"],
+        kodchasan: ["var(--font-kodchasan)"],
+        "chakra-petch": ["var(--font-chakra-petch)"],
       },
       colors: {
         purple: {

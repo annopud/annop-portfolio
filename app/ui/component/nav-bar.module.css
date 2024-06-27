@@ -12,7 +12,7 @@
 }
 
 .motion-underline::after {
-  content: " ";
+  content: ' ';
   position: absolute;
   bottom: 8px;
   height: 2px;
@@ -21,7 +21,7 @@
 
 .motion-underline-active::after {
   animation-name: animation-underline;
-  animation-duration:0.2s;
+  animation-duration: 0.2s;
   animation-timing-function: linear;
   animation-fill-mode: forwards;
 }

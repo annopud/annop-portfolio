@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { useEffect, useRef, useState } from "react";
-import { ExperienceType } from "./experience";
-import Pillar from "./pillar";
-import clsx from "clsx";
+import { useEffect, useRef, useState } from 'react';
+import { ExperienceType } from './experience';
+import Pillar from './pillar';
+import clsx from 'clsx';
 // import { useScroll } from "framer-motion";
 
 export default function ExperienceCard({
@@ -16,12 +16,13 @@ export default function ExperienceCard({
   const [visible, setVisible] = useState(false);
   const ref = useRef(null);
   useEffect(() => {
+    console.log('useEffect');
     const options: {
       root?: Element | Document | null;
       rootMargin?: string;
       threshold: number[];
     } = {
-      rootMargin: "0px",
+      rootMargin: '0px',
       threshold: [],
     };
 
@@ -71,7 +72,8 @@ export default function ExperienceCard({
         // -(30) + 30 = 0
 
         // min(max(0,bottom), height) - min(max(0, top), height) = 0
-
+        // console.log('overlapHeightPx', overlapHeightPx);
+        // console.log('entry', entry);
         if (overlapHeightPx > 20) {
           setVisible(() => {
             return true;
@@ -113,29 +115,35 @@ export default function ExperienceCard({
   // });
 
   return (
-    <div
-      id={"experience_" + index}
-      ref={ref}
-      className={clsx(
-        "bg-purple-900/25 rounded-lg border-l-8 border-purple-900 grid sm:grid-cols-12 gap-2 p-2 pl-0 -translate-x-80 opacity-0",
-        { ["translate-x-0 opacity-100"]: visible },
-        "transition-all-ease-in-out duration-500"
-      )}
-    >
-      <div className={"col-span-4 p-2 text-purple-300"}>{experience.date}</div>
-      <div className="col-span-8 flex flex-col gap-2 p-2">
-        <div className="font-bold">{experience.title}</div>
+    <div ref={ref} className="overflow-hidden">
+      <div
+        id={'experience_' + index}
+        className={clsx(
+          'grid gap-2 rounded-lg border-l-8 border-purple-900 bg-purple-900/25 p-2 pl-0 sm:grid-cols-12',
+          {
+            ['translate-x-0 opacity-100']: visible,
+            ['translate-x-[50%] opacity-0']: !visible,
+          },
+          'transition-all duration-500'
+        )}
+      >
+        <div className={'col-span-4 p-2 text-purple-300'}>
+          {experience.date}
+        </div>
+        <div className="col-span-8 flex flex-col gap-2 p-2">
+          <div className="font-bold">{experience.title}</div>
 
-        <ul className="list-disc ml-4">
-          {experience.reponsibilities.map((responsibility, rId) => (
-            <li key={"responsibility_" + rId}>{responsibility}</li>
-          ))}
-        </ul>
+          <ul className="ml-4 list-disc">
+            {experience.reponsibilities.map((responsibility, rId) => (
+              <li key={'responsibility_' + rId}>{responsibility}</li>
+            ))}
+          </ul>
 
-        <div className="flex gap-2 flex-wrap">
-          {experience.technologies.map((technology, tId) => (
-            <Pillar key={"technology_" + tId}>{technology}</Pillar>
-          ))}
+          <div className="flex flex-wrap gap-2">
+            {experience.technologies.map((technology, tId) => (
+              <Pillar key={'technology_' + tId}>{technology}</Pillar>
+            ))}
+          </div>
         </div>
       </div>
     </div>

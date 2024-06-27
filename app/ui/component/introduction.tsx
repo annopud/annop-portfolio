@@ -1,35 +1,38 @@
-"use client";
-import { chakraPetch } from "../fonts";
-import style from "./profile.module.css";
-import { motion } from "framer-motion";
+'use client';
+import { useEffect, useState } from 'react';
+import style from './profile.module.css';
+// import { motion } from 'framer-motion';
+import clsx from 'clsx';
 
 export default function Introduction() {
+  const [isMounted, setIsMounted] = useState(false);
+  useEffect(() => {
+    setIsMounted(() => true);
+
+    return () => {
+      setIsMounted(() => false);
+    };
+  }, []);
   return (
     <>
-      <motion.div
-        initial="hidden"
-        animate="visible"
-        variants={{
-          hidden: { opacity: 0, x: -200 },
-          visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
-        }}
+      <div
+        className={clsx('transition-all-ease-in-out text-center duration-500', {
+          'translate-x-[unset] opacity-100': isMounted,
+          'translate-x-[-200px] opacity-0': !isMounted,
+        })}
       >
-        Hi, my name is{" "}
+        Hi, my name is{' '}
         <span className={`font-righteous ${style.name}`}>Annop</span>
-      </motion.div>
-      <motion.div
-        initial="hidden"
-        animate="visible"
-        variants={{
-          hidden: { opacity: 0, x: 200 },
-          visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
-        }}
+      </div>
+      <div
+        className={clsx('transition-all-ease-in-out text-center duration-500', {
+          'translate-x-[unset] opacity-100': isMounted,
+          'translate-x-[200px] opacity-0': !isMounted,
+        })}
       >
-        I’m a{" "}
-        <span className={`${chakraPetch.className} font-semibold`}>
-          web developer
-        </span>
-      </motion.div>
+        I’m a{' '}
+        <span className={`font-chakra-petch font-semibold`}>web developer</span>
+      </div>
     </>
   );
 }

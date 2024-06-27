@@ -1,15 +1,15 @@
-import { chakraPetch, kodchasan, righteous } from "../fonts";
-import Introduction from "./introduction";
-import style from "./profile.module.css";
-import { motion } from "framer-motion";
+import { Suspense } from 'react';
+import Introduction from './introduction';
 
 export default function Profile() {
   return (
     <div className={`flex h-[100vh] justify-center`}>
       <div
-        className={`${style.profile} ${kodchasan.className} flex flex-col justify-center items-center text-[3.5rem] leading-[4rem] gap-2`}
+        className={`font-kodchasan flex flex-col items-center justify-center gap-2 text-[2.5rem] leading-[3rem] sm:text-[3.5rem] sm:leading-[4rem]`}
       >
-        <Introduction />
+        <Suspense fallback={<div>Loading...</div>}>
+          <Introduction />
+        </Suspense>
       </div>
     </div>
   );
