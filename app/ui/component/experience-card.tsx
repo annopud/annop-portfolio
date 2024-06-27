@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { ExperienceType } from "./experience";
 import Pillar from "./pillar";
 import clsx from "clsx";
-import { useScroll } from "framer-motion";
+// import { useScroll } from "framer-motion";
 
 export default function ExperienceCard({
   experience,
@@ -13,23 +13,21 @@ export default function ExperienceCard({
   index: number;
   experience: ExperienceType;
 }) {
-  const options: {
-    root?: Element | Document | null;
-    rootMargin?: string;
-    threshold: number[];
-  } = {
-    rootMargin: "0px",
-    threshold: [],
-  };
-
-  for (let i = 0; i <= 1.0; i += 0.01) {
-    options.threshold.push(i);
-  }
-
   const [visible, setVisible] = useState(false);
   const ref = useRef(null);
   useEffect(() => {
-    let prevRatio = -1;
+    const options: {
+      root?: Element | Document | null;
+      rootMargin?: string;
+      threshold: number[];
+    } = {
+      rootMargin: "0px",
+      threshold: [],
+    };
+
+    for (let i = 0; i <= 1.0; i += 0.01) {
+      options.threshold.push(i);
+    }
 
     const observer = new IntersectionObserver((entries, observer) => {
       entries.forEach((entry) => {
@@ -94,8 +92,6 @@ export default function ExperienceCard({
         //     return true;
         //   });
         // }
-
-        prevRatio = entry.intersectionRatio;
       });
     }, options);
 
@@ -106,10 +102,11 @@ export default function ExperienceCard({
       observer.disconnect();
     };
   }, []);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["end end", "start start"],
-  });
+
+  // const { scrollYProgress } = useScroll({
+  //   target: ref,
+  //   offset: ["end end", "start start"],
+  // });
 
   // scrollYProgress.on("change", (v) => {
   //   if (index === 1) console.log(`${index} index <<< `, v);
