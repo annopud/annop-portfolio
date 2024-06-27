@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import { chakraPetch, kodchasan, righteous, spaceGrotesk } from "./ui/fonts";
+import NavBar from "./ui/component/nav-bar";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +15,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body
+        className={`${kodchasan.variable} ${righteous.variable} ${chakraPetch.variable} ${spaceGrotesk.variable} font-space-grotesk`}
+      >
+        <NavBar />
+        {children}
+      </body>
     </html>
   );
 }

@@ -6,6 +6,17 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --purple-50: #faf4ff;
+  --purple-100: #f3e6ff;
+  --purple-200: #e9d2ff;
+  --purple-300: #d8aeff;
+  --purple-400: #c07bff;
+  --purple-500: #a849ff;
+  --purple-600: #9425f8;
+  --purple-700: #7f15db;
+  --purple-800: #6c17b2;
+  --purple-900: #59148f;
+  --purple-950: #250042;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -18,12 +29,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  @apply bg-purple-950;
 }
 
 @layer utilities {

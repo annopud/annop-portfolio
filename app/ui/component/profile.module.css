@@ -1,0 +1,17 @@
+/* .profile {
+  background: -webkit-linear-gradient(
+    309deg,
+    var(--purple-500) 25%,
+    var(--purple-300) 29%,
+    white 52%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.profile .name {
+  background-clip: unset;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: white;
+} */
