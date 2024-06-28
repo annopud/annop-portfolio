@@ -13,6 +13,15 @@ import { Suspense } from 'react';
 export const metadata: Metadata = {
   title: 'Annop T Udomsak',
   description: 'Personal website of Annop T Udomsak',
+  keywords: [
+    'Annop T Udomsak',
+    'Annop',
+    'Udomsak',
+    'Personal website',
+    'Portfolio',
+    'Resume',
+    'Blog',
+  ],
 };
 
 export default function RootLayout({
