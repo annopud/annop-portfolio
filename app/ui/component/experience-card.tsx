@@ -16,7 +16,6 @@ export default function ExperienceCard({
   const [visible, setVisible] = useState(false);
   const ref = useRef(null);
   useEffect(() => {
-    console.log('useEffect');
     const options: {
       root?: Element | Document | null;
       rootMargin?: string;

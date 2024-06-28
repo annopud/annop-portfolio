@@ -26,7 +26,7 @@ export default function NavBar() {
             key={menu.name}
             href={menu.href}
             className={clsx(
-              'flex items-center rounded-lg p-2 shadow-[0px_2px_16px_0px] shadow-purple-900 hover:text-purple-200 hover:shadow-purple-500',
+              'flex items-center rounded-lg p-2 hover:text-purple-200 hover:shadow-[0px_2px_16px_0px] hover:shadow-purple-500',
               navBarStyle['motion-underline'],
               {
                 [navBarStyle['motion-underline-active']]:

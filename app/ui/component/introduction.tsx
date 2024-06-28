@@ -31,8 +31,9 @@ export default function Introduction() {
         className={clsx(
           'bg-gradient-to-r from-purple-200 via-teal-500 to-yellow-500 bg-clip-text text-center text-purple-100 text-transparent transition-[transform,opacity] duration-500',
           {
-            'translate-x-[unset] opacity-100': isMounted,
-            'translate-x-[200px] opacity-0': !isMounted,
+            'translate-x-[2000px] opacity-100': true,
+            // 'translate-x-[unset] opacity-100': isMounted,
+            // 'translate-x-[2000px] opacity-0': !isMounted,
           }
         )}
       >

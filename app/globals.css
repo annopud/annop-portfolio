@@ -17,6 +17,7 @@
   --purple-800: #6c17b2;
   --purple-900: #59148f;
   --purple-950: #250042;
+  overflow-x: hidden;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -30,6 +31,7 @@
 body {
   color: rgb(var(--foreground-rgb));
   @apply bg-purple-950;
+  overflow-x: hidden;
 }
 
 @layer utilities {
