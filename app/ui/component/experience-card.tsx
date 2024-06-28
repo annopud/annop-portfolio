@@ -115,7 +115,7 @@ export default function ExperienceCard({
   // });
 
   return (
-    <div ref={ref} className="overflow-visible">
+    <div ref={ref} className="overflow-hidden">
       <div
         id={'experience_' + index}
         className={clsx(
