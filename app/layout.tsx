@@ -1,12 +1,18 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import { chakraPetch, inter, kodchasan, righteous, spaceGrotesk } from './ui/fonts';
+import {
+  chakraPetch,
+  inter,
+  kodchasan,
+  righteous,
+  spaceGrotesk,
+} from './ui/fonts';
 import NavBar from './ui/component/nav-bar';
 import { Suspense } from 'react';
 
 export const metadata: Metadata = {
-  title: 'Annop T',
-  description: 'Personal website of Annop T',
+  title: 'Annop T Udomsak',
+  description: 'Personal website of Annop T Udomsak',
 };
 
 export default function RootLayout({
