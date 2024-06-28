@@ -19,7 +19,8 @@ export default function NavBar({ className = '' }: { className?: string }) {
   return (
     <div
       className={clsx(
-        'flex justify-center bg-purple-900/25 shadow-[0px_2px_16px_0px] shadow-purple-500',
+        // 'flex justify-center bg-purple-950/90',
+        'flex justify-center bg-purple-950 shadow-[0px_2px_16px_0px] shadow-purple-500',
         className
       )}
     >

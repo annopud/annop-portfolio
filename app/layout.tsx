@@ -35,7 +35,7 @@ export default function RootLayout({
         className={`${inter.variable} ${kodchasan.variable} ${righteous.variable} ${chakraPetch.variable} ${spaceGrotesk.variable} font-space-grotesk`}
       >
         <Suspense fallback={<div>Loading...</div>}>
-          <NavBar />
+          <NavBar className="sticky top-[-1px] z-[1]" />
         </Suspense>
         {children}
       </body>
