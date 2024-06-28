@@ -141,7 +141,7 @@ const experienceList: ExperienceType[] = [
 
 export default function Experience() {
   return (
-    <div className={`mb-4 mt-4 flex justify-center`}>
+    <div className={`mb-4 mt-4 flex justify-center overflow-x-clip`}>
       <div className="flex max-w-[940px] flex-1 flex-col gap-4 font-inter">
         <DownloadButton className="self-start"></DownloadButton>
         {experienceList.map((experienceItem, index) => (
