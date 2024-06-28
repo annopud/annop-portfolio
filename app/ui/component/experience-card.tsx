@@ -115,12 +115,13 @@ export default function ExperienceCard({
   // });
 
   return (
-    <div ref={ref} className="overflow-hidden">
+    <div ref={ref} className="">
       <div
         id={'experience_' + index}
         className={clsx(
-          'grid gap-2 rounded-lg border-l-8 border-purple-900 bg-purple-900/10 hover:bg-purple-900/25 p-2 pl-0 sm:grid-cols-12',
+          'grid gap-2 rounded-lg border-l-8 border-purple-900 bg-purple-900/10 p-2 pl-0 hover:bg-purple-900/25 sm:grid-cols-12',
           {
+            // ['translate-x-[50%] opacity-100 right-[-50%] mr-[-50%]']: true,
             ['translate-x-0 opacity-100']: visible,
             ['translate-x-[50%] opacity-0']: !visible,
           },
