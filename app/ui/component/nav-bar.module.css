@@ -19,6 +19,23 @@
   background: white;
 }
 
+.motion-underline:hover::before {
+  /* content: '';
+  position: absolute;
+  bottom: 2px;
+  height: 6px;
+  width: calc(100% - 1rem);
+  filter: blur(4px);
+  background: var(--purple-400); */
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  height: 6px;
+  width: calc(100% - 1rem);
+  filter: blur(4px);
+  background: var(--purple-500);
+}
+
 .motion-underline-active::after {
   animation-name: animation-underline;
   animation-duration: 0.2s;

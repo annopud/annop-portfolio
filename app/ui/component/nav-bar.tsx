@@ -17,16 +17,14 @@ export default function NavBar() {
   const pathname = usePathname();
 
   return (
-    <div className="flex justify-center">
-      <div
-        className={`mt-2 flex flex-wrap justify-center gap-4 rounded-lg bg-purple-900/25 px-2`}
-      >
+    <div className="flex justify-center bg-purple-900/25 shadow-[0px_2px_16px_0px] shadow-purple-500">
+      <div className={`flex flex-wrap justify-center gap-4 rounded-lg px-2`}>
         {menuList.map((menu) => (
           <Link
             key={menu.name}
             href={menu.href}
             className={clsx(
-              'flex items-center rounded-lg p-2 hover:text-purple-200 hover:shadow-[0px_2px_16px_0px] hover:shadow-purple-500',
+              'flex items-center rounded-lg p-2 hover:text-purple-200 relative',
               navBarStyle['motion-underline'],
               {
                 [navBarStyle['motion-underline-active']]:
