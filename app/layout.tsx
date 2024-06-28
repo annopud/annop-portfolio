@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import { chakraPetch, kodchasan, righteous, spaceGrotesk } from './ui/fonts';
+import { chakraPetch, inter, kodchasan, righteous, spaceGrotesk } from './ui/fonts';
 import NavBar from './ui/component/nav-bar';
 import { Suspense } from 'react';
 
@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${kodchasan.variable} ${righteous.variable} ${chakraPetch.variable} ${spaceGrotesk.variable} font-space-grotesk`}
+        className={`${inter.variable} ${kodchasan.variable} ${righteous.variable} ${chakraPetch.variable} ${spaceGrotesk.variable} font-space-grotesk`}
       >
         <Suspense fallback={<div>Loading...</div>}>
           <NavBar />

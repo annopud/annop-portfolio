@@ -1,5 +1,6 @@
 import { Suspense } from 'react';
 import ExperienceCard from './experience-card';
+import DownloadButton from './download-button';
 
 export interface ExperienceType {
   title: string;
@@ -141,7 +142,8 @@ const experienceList: ExperienceType[] = [
 export default function Experience() {
   return (
     <div className={`mb-4 mt-2 flex justify-center`}>
-      <div className="flex max-w-[940px] flex-1 flex-col gap-4">
+      <div className="flex max-w-[940px] flex-1 flex-col gap-4 font-inter">
+        <DownloadButton className='self-start'></DownloadButton>
         {experienceList.map((experienceItem, index) => (
           <Suspense
             fallback={<div>Loading.......</div>}

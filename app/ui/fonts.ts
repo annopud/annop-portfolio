@@ -3,7 +3,14 @@ import {
   Righteous,
   Chakra_Petch,
   Space_Grotesk,
+  Inter
 } from "next/font/google";
+
+export const inter = Inter({
+  weight: ["200", "300", "400", "500", "700"],
+  subsets: ["latin"],
+  variable: '--font-inter',
+});
 
 export const kodchasan = Kodchasan({
   weight: ["200", "300", "400", "500", "700"],

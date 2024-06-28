@@ -115,25 +115,25 @@ export default function ExperienceCard({
   // });
 
   return (
-    <div ref={ref} className="overflow-hidden">
+    <div ref={ref} className="overflow-visible">
       <div
         id={'experience_' + index}
         className={clsx(
-          'grid gap-2 rounded-lg border-l-8 border-purple-900 bg-purple-900/25 p-2 pl-0 sm:grid-cols-12',
+          'grid gap-2 rounded-lg border-l-8 border-purple-900 bg-purple-900/10 hover:bg-purple-900/25 p-2 pl-0 sm:grid-cols-12',
           {
             ['translate-x-0 opacity-100']: visible,
             ['translate-x-[50%] opacity-0']: !visible,
           },
-          'transition-all duration-500'
+          'transition-[transform,opacity] duration-500'
         )}
       >
         <div className={'col-span-4 p-2 text-purple-300'}>
           {experience.date}
         </div>
-        <div className="col-span-8 flex flex-col gap-2 p-2">
+        <div className="col-span-8 flex flex-col gap-4 p-2">
           <div className="font-bold">{experience.title}</div>
 
-          <ul className="ml-4 list-disc">
+          <ul className="ml-4 list-disc text-purple-100">
             {experience.reponsibilities.map((responsibility, rId) => (
               <li key={'responsibility_' + rId}>{responsibility}</li>
             ))}

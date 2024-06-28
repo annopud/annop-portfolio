@@ -19,6 +19,7 @@ const config: Config = {
         "space-grotesk": ["var(--font-space-grotesk)"],
         kodchasan: ["var(--font-kodchasan)"],
         "chakra-petch": ["var(--font-chakra-petch)"],
+        inter: ["var(--font-inter)"],
       },
       colors: {
         purple: {
