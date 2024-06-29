@@ -22,12 +22,12 @@ export default function ExperienceCard({
       threshold: number[];
     } = {
       rootMargin: '0px',
-      threshold: [],
+      threshold: [0],
     };
 
-    for (let i = 0; i <= 1.0; i += 0.01) {
-      options.threshold.push(i);
-    }
+    // for (let i = 0; i <= 1.0; i += 0.01) {
+    //   options.threshold.push(i);
+    // }
 
     const observer = new IntersectionObserver((entries, observer) => {
       entries.forEach((entry) => {
@@ -71,13 +71,20 @@ export default function ExperienceCard({
         // -(30) + 30 = 0
 
         // min(max(0,bottom), height) - min(max(0, top), height) = 0
-        // console.log('overlapHeightPx', overlapHeightPx);
+        // console.log(
+        //   'overlapHeightPx',
+        //   overlapHeightPx,
+        //   entry.intersectionRatio
+        // );
         // console.log('entry', entry);
-        if (overlapHeightPx > 20) {
+
+        if (entry.isIntersecting) {
           setVisible(() => {
+            // console.log(index + ' visible');
             return true;
           });
         } else {
+          // console.log(index + ' >>> invisible');
           setVisible(() => {
             return false;
           });
@@ -124,7 +131,7 @@ export default function ExperienceCard({
             ['translate-x-0 opacity-100']: visible,
             ['translate-x-[50%] opacity-0']: !visible,
           },
-          'transition-[transform,opacity] duration-500'
+          'transition-[transform,opacity] delay-200 duration-500'
         )}
       >
         <div className={'col-span-4 p-2 text-purple-300'}>
