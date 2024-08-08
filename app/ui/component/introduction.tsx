@@ -24,7 +24,7 @@ export default function Introduction() {
           }
         )}
       >
-        <span className="">Hi, my name is </span>
+        <span className="">Hi, I’m </span>
         <span className={`font-righteous ${style.name}`}>Annop</span>
       </div>
       <div
@@ -36,7 +36,7 @@ export default function Introduction() {
           }
         )}
       >
-        <span className="">I’m a </span>
+        <span className="">a </span>
         <span className={`font-chakra-petch font-semibold`}>web developer</span>
       </div>
     </>
