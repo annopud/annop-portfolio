@@ -43,7 +43,7 @@ const experienceList: ExperienceType[] = [
     ],
   },
   {
-    title: 'Lead Developer',
+    title: 'Lead Developer (Part-time)',
     company: 'Maewnam IT Network Solution',
     date: 'Jan 2022 - May 2022',
     description: 'Developed software for company B',
